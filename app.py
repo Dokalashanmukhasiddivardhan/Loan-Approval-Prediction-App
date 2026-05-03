@@ -9,7 +9,7 @@ scaler = pickle.load(open("scaler.pkl", "rb"))
 
 # Title
 st.set_page_config(page_title="Loan Prediction", layout="centered")
-st.title("💰 Loan Approval Prediction App")
+st.title(" Loan Approval Prediction App")
 
 st.markdown("### Enter Applicant Details")
 
@@ -59,17 +59,17 @@ input_data = scaler.transform(input_data)
 # -------------------------------
 # PREDICTION
 # -------------------------------
-if st.button("🔍 Predict Loan Status"):
+if st.button(" Predict Loan Status"):
     prediction = model.predict(input_data)[0]
     probability = model.predict_proba(input_data)[0][1]
 
     if prediction == 1:
-        st.success(f"✅ Loan Approved (Confidence: {probability:.2f})")
+        st.success(f"Loan Approved (Confidence: {probability:.2f})")
     else:
-        st.error(f"❌ Loan Rejected (Confidence: {1 - probability:.2f})")
+        st.error(f" Loan Rejected (Confidence: {1 - probability:.2f})")
 
 # -------------------------------
 # FOOTER
 # -------------------------------
 st.markdown("---")
-st.markdown("Built using Machine Learning + Streamlit 🚀")
+st.markdown("Built using Machine Learning + Streamlit ")
